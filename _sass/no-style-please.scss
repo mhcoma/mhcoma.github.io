@@ -63,7 +63,7 @@ a {
 	text-decoration: none;
 
   &:hover {
-    color: #ffffff;
+    color: white;
     background-color: #3f7fff;
     outline: 3px solid #3f7fff;
   }
@@ -71,7 +71,12 @@ a {
 
 *:target {
   background: #3fff7f;
-  a { color: black; }
+  a {
+    color: black;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .w {
