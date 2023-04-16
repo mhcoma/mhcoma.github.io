@@ -28,8 +28,8 @@ twitter_username: mhComa_
 github_username:  mhcoma
 
 # Build settings
+remote_theme: riggraz/no-style-please
 theme: no-style-please
-# remote_theme: riggraz/no-style-please
 plugins:
   - jekyll-feed
 
