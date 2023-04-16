@@ -28,10 +28,15 @@ twitter_username: mhComa_
 github_username:  mhcoma
 
 # Build settings
-remote_theme: riggraz/no-style-please
+remote_theme: mhcoma/mhcoma.github.io
+theme_config:
+  show_description: true
+  back_home_text: "return"
+  date_format: "%Y-%m-%d"
 # theme: no-style-please
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 markdown: kramdown
 kramdown:
