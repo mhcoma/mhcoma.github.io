@@ -24,13 +24,19 @@ description: >- # this means to ignore newlines until "baseurl:"
   Ich bin ein Hund!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: _mhcoma
+twitter_username: mhComa_
 github_username:  mhcoma
 
 # Build settings
-theme: minima
+theme: no-style-please
 plugins:
   - jekyll-feed
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  latex_headers: section,subsection,subsubsection,paragraph,subparagraph,subparagraph
+  syntax_highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default.
