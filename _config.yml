@@ -27,9 +27,13 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mhComa_
 github_username:  mhcoma
 
+# permalink: /:slug.html
+# favicon: "logo.png"
+
 # Build settings
 remote_theme: mhcoma/mhcoma.github.io
 theme_config:
+  appearance: "auto"
   show_description: true
   back_home_text: "return"
   date_format: "%Y-%m-%d"

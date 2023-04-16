@@ -1,36 +1,51 @@
-// -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(1);
-  img {
-    filter: invert(1);
+@mixin darkmode {
+  color: white;
+  background: #0f0f0f;
 
-    &.ioda { filter: invert(0); }
+  hr { border-top: 1px solid #7f7f7f; }
+  table, th, td { border: thin solid white; }
+  blockquote { border: thin solid white; }
+  code { border: 1px solid white; }
+  
+  a {
+    color: #6f9fff;
+    &:hover {
+      color: black;
+      background-color: #6f9fff;
+      outline: 3px solid #6f9fff;
+    }
+  }
+
+  *:target {
+    background: #0f3f1f;
+    a {
+      color: white;
+      &:hover {
+        color: black;
+      }
+    }
   }
 }
 
-body[a="dark"] { @include dark-appearance; }
-
-
-@media (prefers-color-scheme: dark) {
-  body[a="auto"] { @include dark-appearance; }
+html {
+  height: 100%;
+  background: white;
 }
-// -------------------------------------------- //
-
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
-html, body { background: white; }
-
-html { height: 100%; }
 
 body {
   color: black;
+  background: white;
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
+
+  &[a="dark"] { @include darkmode; }
+  @media (prefers-color-scheme: dark) {
+    body[a="auto"] { @include darkmode; }
+  }
 }
 
 .post-meta { text-align: right; }
@@ -43,8 +58,6 @@ p { margin: 1rem 0; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background: #3fff7f; }
-
 a {
   color: #3f7fff;
 	text-decoration: none;
@@ -56,6 +69,11 @@ a {
   }
 }
 
+*:target {
+  background: #3fff7f;
+  a { color: black; }
+}
+
 .w {
   max-width: 640px;
   margin: 0 auto;
@@ -63,11 +81,9 @@ a {
 }
 
 hr {
+  border: 0px;
+  border-top: 1px solid #000;
   text-align: center;
-  border: 1px solid #bfbfbf;
-
-  // &:before { content: '/////' }
-  // &:after { content: attr(data-content) '/////' }
 }
 
 table { width: 100%; }
@@ -78,10 +94,7 @@ table, th, td {
   padding: 0.4rem;
 }
 
-// code {
-//   color: white;
-//   background: black;
-// }
+code { border: 1px solid black; }
 
 div.highlighter-rouge code {
   display: block;
@@ -94,7 +107,6 @@ blockquote {
   font-style: italic;
   border: thin solid black;
   padding: 1rem;
-
   p { margin: 0; }
 }
 
