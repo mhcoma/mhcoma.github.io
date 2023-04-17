@@ -14,7 +14,7 @@ layout: default
     tags : 
     {%- for tag in page.tags -%}
       {% if site.data.tags contains tag %}
-        <a href="/tag-archive/?tag={{ tag }}">#{{ tag }}</a>
+        <a href="/tag-archive?tag={{ tag }}">#{{ tag }}</a>
       {% endif %}
     {%- endfor -%}
   {%- endif -%}

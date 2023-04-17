@@ -27,7 +27,7 @@
       {% for tag in site.tags %}
       <li>
       {% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
-        <a href="tag-archive/?tag={{ tag_name }}">#{{ tag_name }}</a>
+        <a href="tag-archive?tag={{ tag_name }}">#{{ tag_name }}</a>
       </li>
       {% endfor %}
     {%- endif -%}
