@@ -44,7 +44,7 @@ body {
 
   &[a="dark"] { @include darkmode; }
   @media (prefers-color-scheme: dark) {
-    body[a="auto"] { @include darkmode; }
+    &[a="auto"] { @include darkmode; }
   }
 }
 
