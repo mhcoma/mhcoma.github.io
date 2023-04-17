@@ -2,8 +2,32 @@
 layout: default
 ---
 
-{%-include back_link.html-%}
+{%- include back_link.html -%}
 
-<h1>{{ page.title }}</h1>
 
-{%-include post_list.html category=page.which_category-%}
+<script>
+	function get_parameter_by_name(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		results = regex.exec(location.search);
+		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+</script>
+
+<h1>
+	{{ page.title }}
+	{% if page.tag_only %}
+		<script>
+			document.write("#" + get_parameter_by_name("tag"));
+		</script>
+	{% endif %}
+</h1>
+{%- if site.tags -%}
+	tags : 
+	{%- for tag in site.tags -%}
+		{% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
+		<a href="/tag-archive/?tag={{ tag_name }}">#{{ tag_name }}</a>
+	{%- endfor -%}
+{%- endif -%}
+
+{%- include post_list.html -%}

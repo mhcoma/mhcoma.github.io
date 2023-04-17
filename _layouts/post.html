@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{%-include back_link.html-%}
+{%- include back_link.html -%}
 
 <article>
   <p class="post-meta">
@@ -10,6 +10,14 @@ layout: default
   </p>
   
   <h1>{{ page.title }}</h1>
+  {%- if page.tags -%}
+    tags : 
+    {%- for tag in page.tags -%}
+      {% if site.data.tags contains tag %}
+        <a href="/tag-archive/?tag={{ tag }}">#{{ tag }}</a>
+      {% endif %}
+    {%- endfor -%}
+  {%- endif -%}
 
   {{ content }}
 </article>
@@ -27,13 +35,13 @@ layout: default
   data-emit-metadata="0"
   data-input-position="top"
   data-theme=
-    {% if site.theme_config.appearance == "auto" %}
+    {%- if site.theme_config.appearance == "auto" -%}
       "https://raw.githubusercontent.com/mhcoma/mhcoma.github.io/gh-pages/assets/built/giscus.css"
-    {% else if site.theme_config.appearance == "light" %}
+    {%- else if site.theme_config.appearance == "light" -%}
       "light_high_contrast"
-    {% else %}
+    {%- else -%}
       "dark_high_contrast"
-    {% endif %}
+    {%- endif -%}
   data-lang="ko"
   crossorigin="anonymous"
   async>

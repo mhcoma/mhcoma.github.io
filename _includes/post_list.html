@@ -1,25 +1,41 @@
-{%-if include.category-%}
-  {%-assign posts = site.categories[include.category]-%}  
-{%-else-%}
-  {%-assign posts = site.posts-%}
-{%-endif-%}
+{%- assign posts = site.posts -%}
 
-{%-if include.limit and posts.size > include.limit-%}
-  {%-assign limit_exceeded = true-%}
-{%-else-%}
-  {%-assign limit_exceeded = false-%}
-{%-endif-%}
+{%- if include.limit and posts.size > include.limit -%}
+  {%- assign limit_exceeded = true -%}
+{%- else -%}
+  {%-assign limit_exceeded = false -%}
+{%- endif -%}
 
-{%- if posts.size > 0 -%}
-  <ul>
-    {%- for post in posts limit: include.limit -%}
+{%- if include.tag_only -%}
+  {% for tag in site.tags %}
+    {% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
+    <ul style="display: none;" id="{{ tag_name }}">
+      {% for post in site.tags[tag_name] %}
         <li>
           <span>{{- post.date | date: site.theme_config.date_format -}}</span>
           <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
         </li>
-    {%- endfor -%}
-    {%- if include.show_more and limit_exceeded -%}
-      <li><a href="{{ include.show_more_url }}">{{ include.show_more_text | default: "Show more..." }}</a></li>
-    {%- endif -%}
-  </ul>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  <script>
+    var id = get_parameter_by_name("tag");
+    if (id) {
+      document.getElementById(get_parameter_by_name("tag")).style.display = "block";
+    }
+  </script>
+{%- else -%}
+  {%- if posts.size > 0 -%}
+    <ul>
+      {%- for post in posts limit: include.limit -%}
+          <li>
+            <span>{{- post.date | date: site.theme_config.date_format -}}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
+          </li>
+      {%- endfor -%}
+      {%- if include.show_more and limit_exceeded -%}
+        <li><a href="{{ include.show_more_url }}">{{ include.show_more_text | default: "show more..." }}</a></li>
+      {%- endif -%}
+    </ul>
+  {%- endif -%}
 {%- endif -%}

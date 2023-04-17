@@ -11,8 +11,8 @@
     {%- endif -%}
   </title>
 
-  {%-seo title=false-%}
-  {%-feed_meta-%}
+  {%- seo title=false -%}
+  {%- feed_meta -%}
 
   <script>
     window.MathJax = {
@@ -37,7 +37,8 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
-  <link rel="stylesheet" href="/assets/built/syntax.css">
+  <!-- <script async src="{{ "/assets/js/script.js" | relative_url }}"></script> -->
+  <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css">
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />

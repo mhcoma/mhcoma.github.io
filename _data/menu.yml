@@ -4,15 +4,13 @@ entries:
 
   - title: all posts
     post_list:
-      limit: 10
+      limit: 20
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
-
-  - title: categories
-    entries:
-    - title: c
-      url: c-archive
+  
+  - title: tags
+    tag_list: yeah
 
   - title: rss
     url: feed.xml
