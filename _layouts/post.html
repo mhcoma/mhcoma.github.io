@@ -13,3 +13,28 @@ layout: default
 
   {{ content }}
 </article>
+
+<hr>
+
+<script src="https://giscus.app/client.js"
+  data-repo="mhcoma/mhcoma.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkyMDQxMjMyODc="
+  data-category="Announcements"
+  data-category-id="DIC_kwDODCqsl84CV1Vc"
+  data-mapping="url"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme=
+    {% if site.theme_config.appearance == "auto" %}
+      "https://raw.githubusercontent.com/mhcoma/mhcoma.github.io/gh-pages/assets/built/giscus.css"
+    {% else if site.theme_config.appearance == "light" %}
+      "light_high_contrast"
+    {% else %}
+      "dark_high_contrast"
+    {% endif %}
+  data-lang="ko"
+  crossorigin="anonymous"
+  async>
+</script>
