@@ -5,7 +5,8 @@
 	hr { border-top: 1px solid #7f7f7f; }
 	table, th, td { border: thin solid white; }
 	blockquote { border: thin solid white; }
-	code { border: 1px solid white; }
+	p code { background-color: #1f3f7f; }
+	pre code { border: 1px solid white; }
 	
 	a {
 		color: #6f9fff;
@@ -99,7 +100,8 @@ table, th, td {
 	padding: 0.4rem;
 }
 
-code { border: 1px solid black; }
+p code { background-color: #e7efff; }
+pre code { border: 1px solid black; }
 
 div.highlighter-rouge code {
 	display: block;
