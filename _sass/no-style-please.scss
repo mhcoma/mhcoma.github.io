@@ -1,51 +1,51 @@
 @mixin darkmode {
-  color: white;
-  background: #0f0f0f;
+	color: white;
+	background: #0f0f0f;
 
-  hr { border-top: 1px solid #7f7f7f; }
-  table, th, td { border: thin solid white; }
-  blockquote { border: thin solid white; }
-  code { border: 1px solid white; }
-  
-  a {
-    color: #6f9fff;
-    &:hover {
-      color: black;
-      background-color: #6f9fff;
-      outline: 3px solid #6f9fff;
-    }
-  }
+	hr { border-top: 1px solid #7f7f7f; }
+	table, th, td { border: thin solid white; }
+	blockquote { border: thin solid white; }
+	code { border: 1px solid white; }
+	
+	a {
+		color: #6f9fff;
+		&:hover {
+			color: black;
+			background-color: #6f9fff;
+			outline: 3px solid #6f9fff;
+		}
+	}
 
-  *:target {
-    background: #0f3f1f;
-    a {
-      color: white;
-      &:hover {
-        color: black;
-      }
-    }
-  }
+	*:target {
+		background: #0f3f1f;
+		a {
+			color: white;
+			&:hover {
+				color: black;
+			}
+		}
+	}
 }
 
 html {
-  height: 100%;
-  background: white;
+	height: 100%;
+	background: white;
 }
 
 body {
-  color: black;
-  background: white;
-  font-family: monospace;
-  font-size: 16px;
-  line-height: 1.4;
-  margin: 0;
-  min-height: 100%;
-  overflow-wrap: break-word;
+	color: black;
+	background: white;
+	font-family: monospace;
+	font-size: 16px;
+	line-height: 1.4;
+	margin: 0;
+	min-height: 100%;
+	overflow-wrap: break-word;
 
-  &[a="dark"] { @include darkmode; }
-  @media (prefers-color-scheme: dark) {
-    &[a="auto"] { @include darkmode; }
-  }
+	&[a="dark"] { @include darkmode; }
+	@media (prefers-color-scheme: dark) {
+		&[a="auto"] { @include darkmode; }
+	}
 }
 
 .post-meta { text-align: right; }
@@ -59,64 +59,64 @@ p { margin: 1rem 0; }
 li { margin: 0.4rem 0; }
 
 a {
-  color: #3f7fff;
+	color: #3f7fff;
 	text-decoration: none;
 
-  &:hover {
-    color: white;
-    background-color: #3f7fff;
-    outline: 3px solid #3f7fff;
-  }
+	&:hover {
+		color: white;
+		background-color: #3f7fff;
+		outline: 3px solid #3f7fff;
+	}
 }
 
 *:target {
-  background: #3fff7f;
-  a {
-    color: black;
-    &:hover {
-      color: white;
-    }
-  }
+	background: #3fff7f;
+	a {
+		color: black;
+		&:hover {
+			color: white;
+		}
+	}
 }
 
 .w {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 4rem 2rem;
 }
 
 hr {
-  border: 0px;
-  border-top: 1px solid #000;
-  text-align: center;
+	border: 0px;
+	border-top: 1px solid #000;
+	text-align: center;
 }
 
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4rem;
+	border: thin solid black;
+	border-collapse: collapse;
+	padding: 0.4rem;
 }
 
 code { border: 1px solid black; }
 
 div.highlighter-rouge code {
-  display: block;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  padding: 1rem;
+	display: block;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	padding: 1rem;
 }
 
 blockquote {
-  font-style: italic;
-  border: thin solid black;
-  padding: 1rem;
-  p { margin: 0; }
+	font-style: italic;
+	border: thin solid black;
+	padding: 1rem;
+	p { margin: 0; }
 }
 
 img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
 }

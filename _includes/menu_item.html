@@ -1,36 +1,36 @@
 <ul>
-  {%- for item in include.collection -%}
-    <li>
-    {%- if item.url -%}
-      <a href="{{ item.url }}">{{ item.title }}</a>
-    {%- else -%}
-      {{ item.title }}
-    {%- endif -%}
-    </li>
+	{%- for item in include.collection -%}
+		<li>
+		{%- if item.url -%}
+			<a href="{{ item.url }}">{{ item.title }}</a>
+		{%- else -%}
+			{{ item.title }}
+		{%- endif -%}
+		</li>
 
-    {%- if item.post_list -%}
-      {%
-        include post_list.html
-          limit = item.post_list.limit
-          show_more = item.post_list.show_more
-          show_more_text = item.post_list.show_more_text
-          show_more_url = item.post_list.show_more_url
-     -%}
-    {%- endif -%}
+		{%- if item.post_list -%}
+			{%
+				include post_list.html
+					limit = item.post_list.limit
+					show_more = item.post_list.show_more
+					show_more_text = item.post_list.show_more_text
+					show_more_url = item.post_list.show_more_url
+		-%}
+		{%- endif -%}
 
-    {%- if item.entries -%}
-      {%- include menu_item.html collection = item.entries -%}
-    {%- endif -%}
+		{%- if item.entries -%}
+			{%- include menu_item.html collection = item.entries -%}
+		{%- endif -%}
 
-    <ul>
-    {%- if item.tag_list -%}
-      {% for tag in site.tags %}
-      <li>
-      {% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
-        <a href="tag-archive?tag={{ tag_name }}">#{{ tag_name }}</a>
-      </li>
-      {% endfor %}
-    {%- endif -%}
-    </ul>
-  {%- endfor -%}
+		<ul>
+		{%- if item.tag_list -%}
+			{% for tag in site.tags %}
+			<li>
+			{% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
+				<a href="tag-archive?tag={{ tag_name }}">#{{ tag_name }}</a>
+			</li>
+			{% endfor %}
+		{%- endif -%}
+		</ul>
+	{%- endfor -%}
 </ul>
