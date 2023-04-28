@@ -14,3 +14,9 @@ entries:
 
   - title: rss
     url: feed.xml
+
+  - title: github
+    url: https://github.com/mhcoma
+
+  - title: twitter
+    url: https://twitter.com/mhComa_
