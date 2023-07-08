@@ -8,7 +8,7 @@
 
 {%- if include.tag_only -%}
 	{% for tag in site.tags %}
-		{% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
+		{% capture tag_name %}{{ tag | first | slugize }}{% endcapture %}
 		<ul style="display: none;" id="{{ tag_name }}">
 			{% for post in site.tags[tag_name] %}
 				<li>
